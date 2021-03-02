@@ -7,12 +7,14 @@ const ORIGIN = 'https://web-ui.openintegrationhub.com';
 module.exports = function (app) {
     app.use(proxy('/iam-api', {
         pathRewrite: { '^/iam-api': '/' },
-        target: conf.endpoints.iam,
+        target: 'http://34.120.69.157',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
             proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Host', 'iam.openintegrationhub.com');
             // or log the req
+            console.log('on-proxy');
         },
     }));
 
