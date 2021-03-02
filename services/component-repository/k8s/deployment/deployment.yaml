@@ -29,12 +29,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: component-repository
-              key: MONGODB_URI
+              key: mongourl
         - name: IAM_TOKEN
           valueFrom:
             secretKeyRef:
               name: component-repository
-              key: IAM_TOKEN
+              key: iamtoken
         resources:
           limits:
             cpu: 0.1
