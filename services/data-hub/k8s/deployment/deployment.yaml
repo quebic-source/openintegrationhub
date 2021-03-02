@@ -29,17 +29,17 @@ spec:
           valueFrom:
             secretKeyRef:
               name: data-hub
-              key: MONGODB_URI
+              key: mongourl
         - name: RABBITMQ_URI
           valueFrom:
             secretKeyRef:
               name: data-hub
-              key: RABBITMQ_URI
+              key: rabbitmqurl
         - name: IAM_TOKEN
           valueFrom:
             secretKeyRef:
               name: data-hub
-              key: IAM_TOKEN
+              key: iamtoken
         resources:
           limits:
             cpu: 0.1
