@@ -30,12 +30,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: component-orchestrator
-              key: IAM_TOKEN
+              key: iamtoken
         - name: MONGODB_URI
           valueFrom:
             secretKeyRef:
               name: component-orchestrator
-              key: MONGODB_URI
+              key: mongourl
         resources:
           limits:
             cpu: 0.1
