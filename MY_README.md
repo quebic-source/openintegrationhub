@@ -47,3 +47,43 @@ kubectl -n oih-dev-ns create secret generic oidc-certs --from-file=keystore.json
   "password": "somestring" //'somestring' this is encoded in my secret fil 'admin_password' 
 }
 ```
+
+### Create IAM token for other service. Eg: flow, component
+###### Create service account user
+* /api/v1/users
+* request
+```
+{
+  "username": "servicename@serviceaccount.de",
+  "firstname": "a",
+  "lastname": "b",
+  "role": "SERVICE_ACCOUNT",
+  "status": "ACTIVE",
+  "password": "asd",
+  "permissions": [
+    "iam.token.introspect",
+    "components.get"
+  ]
+}
+```
+* get user id
+
+###### Create iam token
+* url /api/v1/tokens
+* request
+```
+{
+  "accountId": "PASTE SERVICE ACCOUNT ID HERE",
+  "expiresIn": -1
+}
+```
+* get return token. And convert it into base64
+* then set that value into 'iamtoken' in services\{{service}}\k8s\config\secret.yml
+
+##### Some changes in service config map
+* Change ConfigMap INTROSPECT_ENDPOINT_BASIC: "http://iam:3099/api/v1/tokens/introspect"
+
+## Access Component API
+* Log in using serviceaccount user. Get Auth_token
+* {{HOST}}/components
+* header = Bearer + Auth_token

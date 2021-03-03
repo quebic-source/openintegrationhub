@@ -20,76 +20,83 @@ module.exports = function (app) {
 
     app.use(proxy('/flow-api', {
         pathRewrite: { '^/flow-api': '/' },
-        target: conf.endpoints.flow,
+        target: 'http://34.120.69.157',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
             proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Host', 'flow-repository.openintegrationhub.com');
             // or log the req
         },
     }));
 
     app.use(proxy('/app-directory-api', {
         pathRewrite: { '^/app-directory-api': '/' },
-        target: conf.endpoints.appDirectory,
+        target: 'http://34.120.69.157',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
             proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Host', 'iam.openintegrationhub.com');
             // or log the req
         },
     }));
 
     app.use(proxy('/dispatcher-api', {
         pathRewrite: { '^/dispatcher-api': '/' },
-        target: conf.endpoints.dispatcher,
+        target: 'http://34.120.69.157',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
             proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Host', 'iam.openintegrationhub.com');
             // or log the req
         },
     }));
 
     app.use(proxy('/component-api', {
         pathRewrite: { '^/component-api': '/' },
-        target: conf.endpoints.component,
+        target: 'http://34.120.69.157',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
-            proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Origin', 'openintegrationhub.com');
+            proxyReq.setHeader('Host', 'component-repository.openintegrationhub.com');
             // or log the req
         },
     }));
     app.use(proxy('/metadata-api', {
         pathRewrite: { '^/metadata-api': '/' },
         changeOrigin: true,
-        target: conf.endpoints.metadata,
+        target: 'http://34.120.69.157',
         onProxyReq(proxyReq) {
             // add custom header to request
             proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Host', 'iam.openintegrationhub.com');
             // or log the req
         },
     }));
 
     app.use(proxy('/secrets-api', {
         pathRewrite: { '^/secrets-api': '/' },
-        target: conf.endpoints.secrets,
+        target: 'http://34.120.69.157',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
             proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Host', 'skm.openintegrationhub.com');
             // or log the req
         },
     }));
 
     app.use(proxy('/webhooks', {
         pathRewrite: { '^/webhooks': '/' },
-        target: conf.endpoints.webhooks,
+        target: 'http://34.120.69.157',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
             proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Host', 'iam.openintegrationhub.com');
             // or log the req
         },
     }));
