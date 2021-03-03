@@ -20,13 +20,13 @@ spec:
       - backend:
           serviceName: secret-service
           servicePort: 3000
-  # - host: flow-repository.openintegrationhub.com
-  #   http:
-  #     paths:
-  #     - backend:
-  #         serviceName: flow-repository
-  #         servicePort: 3001
-  # - host: template-repository.openintegrationhub.com
+  - host: flow-repository.openintegrationhub.com
+    http:
+      paths:
+      - backend:
+          serviceName: flow-repository
+          servicePort: 3001
+  #  - host: template-repository.openintegrationhub.com
   #   http:
   #     paths:
   #     - backend:
@@ -80,13 +80,13 @@ spec:
   #     - backend:
   #         serviceName: ils
   #         servicePort: 3003
-  # - host: dispatcher-service.openintegrationhub.com
-  #   http:
-  #     paths:
-  #     - backend:
-  #         serviceName: dispatcher-service
-  #         servicePort: 3013
-  # - host: app-directory.openintegrationhub.com
+  - host: dispatcher-service.openintegrationhub.com
+    http:
+      paths:
+      - backend:
+          serviceName: dispatcher-service
+          servicePort: 3013
+  #  - host: app-directory.openintegrationhub.com
   #   http:
   #     paths:
   #     - backend:
