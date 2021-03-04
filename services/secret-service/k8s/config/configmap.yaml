@@ -6,9 +6,10 @@ metadata:
 data:
   API_BASE: /api/v1
   DEBUG_MODE: "false"
-  INTROSPECT_ENDPOINT_BASIC: "http://iam.openintegrationhub.com/api/v1/tokens/introspect"
-  INTROSPECT_TYPE: basic
-  LOG_LEVEL: error
+  INTROSPECT_ENDPOINT_BASIC: "http://iam:3099/api/v1/tokens/introspect" # IAM cluster ip
+  INTROSPECT_TYPE: "basic"
+#  LOG_LEVEL: trace
+  LOG_LEVEL: debug
   ORIGINWHITELIST: openintegrationhub.com
   PORT: "3000"
   RABBITMQ_URI: "amqp://guest:guest@rabbitmq-service.oih-dev-ns.svc.cluster.local:5672"

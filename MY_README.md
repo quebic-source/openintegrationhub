@@ -1,3 +1,6 @@
+# GCP Account
+* quebicaws2021@gmail.com
+
 ## Init
 * kubectl apply -f platform/namespace.yaml
 * kubectl apply -f platform/rabbitmq.yaml

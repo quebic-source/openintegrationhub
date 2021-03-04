@@ -4,5 +4,5 @@ metadata:
   name: data-hub
   namespace: oih-dev-ns
 data:
-  LOG_LEVEL: trace
+  LOG_LEVEL: debug
   PORT: "1234"

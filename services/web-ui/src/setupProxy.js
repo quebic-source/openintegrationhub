@@ -24,7 +24,7 @@ module.exports = function (app) {
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
-            proxyReq.setHeader('Origin', ORIGIN);
+            proxyReq.setHeader('Origin', 'openintegrationhub.com');
             proxyReq.setHeader('Host', 'flow-repository.openintegrationhub.com');
             // or log the req
         },
