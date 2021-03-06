@@ -57,15 +57,14 @@ kubectl -n oih-dev-ns create secret generic oidc-certs --from-file=keystore.json
 * request
 ```
 {
-  "username": "servicename@serviceaccount.de",
+  "username": "super1@serviceaccount.de",
   "firstname": "a",
   "lastname": "b",
   "role": "SERVICE_ACCOUNT",
   "status": "ACTIVE",
   "password": "asd",
   "permissions": [
-    "iam.token.introspect",
-    "components.get"
+    "all"
   ]
 }
 ```
