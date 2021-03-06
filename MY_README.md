@@ -92,6 +92,7 @@ kubectl -n oih-dev-ns create secret generic oidc-certs --from-file=keystore.json
 
 
 ## My Custom Compoent
+* https://github.com/openintegrationhub/contacts-adapter-template
 * https://docs.elastic.io/guides/building-nodejs-component.html
 * https://github.com/elasticio/code-component
 ```
