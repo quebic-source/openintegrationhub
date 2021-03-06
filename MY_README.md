@@ -89,3 +89,54 @@ kubectl -n oih-dev-ns create secret generic oidc-certs --from-file=keystore.json
 * Log in using serviceaccount user. Get Auth_token
 * {{HOST}}/components
 * header = Bearer + Auth_token
+
+
+## My Custom Compoent
+* https://docs.elastic.io/guides/building-nodejs-component.html
+* https://github.com/elasticio/code-component
+```
+{
+  "distribution": {
+    "type": "docker",
+    "image": "elasticio/code-component:7bc2535df2f8a35c3653455e5becc701b010d681"
+  },
+  "access": "public",
+  "name": "Node.js code",
+  "description": "Node.js code component that executes the provided code"
+}
+```
+
+## My Flow
+```
+{
+  "name": "Timer To Code Component Example",
+  "description:": "This flow periodically triggers the flow and sends request to webhook.site",
+  "graph": {
+    "nodes": [
+      {
+        "id": "step_1",
+        "componentId": "6042e3ee98d81f001b935397",
+        "function": "executeTrigger",
+        "fields": {
+          "code": "function run(msg) {console.log('Calling trigger', msg); return {'message': 'HELLO1'};}"
+        }
+      },
+	  {
+        "id": "step_2",
+        "componentId": "6042e3ee98d81f001b935397",
+        "function": "execute",
+        "fields": {
+          "code": "function run(msg) {console.log('Calling action', msg);}"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "source": "step_1",
+        "target": "step_2"
+      }
+    ]
+  },
+  "cron": "*/2 * * * *"
+}
+```

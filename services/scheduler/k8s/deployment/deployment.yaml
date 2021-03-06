@@ -29,7 +29,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: scheduler
-              key: MONGODB_URI
+              key: mongourl
         resources:
           limits:
             cpu: 0.1
