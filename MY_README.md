@@ -99,7 +99,7 @@ kubectl -n oih-dev-ns create secret generic oidc-certs --from-file=keystore.json
 {
   "distribution": {
     "type": "docker",
-    "image": "elasticio/code-component:7bc2535df2f8a35c3653455e5becc701b010d681"
+    "image": "quebicdocker/openintegrationhub-contacts-adapter-template-component:3"
   },
   "access": "public",
   "name": "Node.js code",
@@ -141,3 +141,8 @@ kubectl -n oih-dev-ns create secret generic oidc-certs --from-file=keystore.json
   "cron": "*/2 * * * *"
 }
 ```
+
+## Inter Component Message communication
+* Component need these MESSAGE_CRYPTO_IV: '9f43a0048b2e8c01', MESSAGE_CRYPTO_PASSWORD: 'asd'
+* When Dispatch message form Component to another, message with encrypt.
+* Add env value to that in QueueCreator.createQueuesForFlowNode method in component-orchestrator.
