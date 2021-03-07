@@ -21,7 +21,7 @@ spec:
       serviceAccountName: component-orchestrator-account
       containers:
       - name: component-orchestrator
-        image: "quebicdocker/openintegrationhub-component-orchestrator:10"
+        image: "quebicdocker/openintegrationhub-component-orchestrator:20"
         imagePullPolicy: Always
         envFrom:
         - configMapRef:

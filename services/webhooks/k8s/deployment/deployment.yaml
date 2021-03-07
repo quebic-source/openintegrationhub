@@ -30,7 +30,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: webhooks
-              key: MONGODB_URI
+              key: mongourl
         resources:
           limits:
             cpu: 0.1
