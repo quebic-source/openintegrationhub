@@ -99,7 +99,7 @@ kubectl -n oih-dev-ns create secret generic oidc-certs --from-file=keystore.json
 {
   "distribution": {
     "type": "docker",
-    "image": "quebicdocker/openintegrationhub-contacts-adapter-template-component:3"
+    "image": "quebicdocker/openintegrationhub-contacts-adapter-template-component:7"
   },
   "access": "public",
   "name": "Node.js code",
