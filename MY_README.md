@@ -1,3 +1,14 @@
+# Connect EKS
+##### https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html
+##### https://aws.amazon.com/premiumsupport/knowledge-center/eks-api-server-unauthorized-error/
+* aws sts get-caller-identity
+* aws eks update-kubeconfig --region us-west-2 --name my-cluster
+* aws --region us-west-2 eks update-kubeconfig --name wesson--ipaas-cluster --role-arn arn:aws:iam::947925822813:user/tharanga
+
+##### Check conntivity
+* kubectl get svc
+
+
 # GCP Account
 * quebicaws2021@gmail.com
 
