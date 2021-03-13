@@ -7,7 +7,7 @@ const ORIGIN = 'https://web-ui.openintegrationhub.com';
 module.exports = function (app) {
     app.use(proxy('/iam-api', {
         pathRewrite: { '^/iam-api': '/' },
-        target: 'http://34.120.69.157',
+        target: 'http://34.98.77.144',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
@@ -20,7 +20,7 @@ module.exports = function (app) {
 
     app.use(proxy('/flow-api', {
         pathRewrite: { '^/flow-api': '/' },
-        target: 'http://34.120.69.157',
+        target: 'http://34.98.77.144',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
@@ -32,7 +32,7 @@ module.exports = function (app) {
 
     app.use(proxy('/app-directory-api', {
         pathRewrite: { '^/app-directory-api': '/' },
-        target: 'http://34.120.69.157',
+        target: 'http://34.98.77.144',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
@@ -44,7 +44,7 @@ module.exports = function (app) {
 
     app.use(proxy('/dispatcher-api', {
         pathRewrite: { '^/dispatcher-api': '/' },
-        target: 'http://34.120.69.157',
+        target: 'http://34.98.77.144',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
@@ -56,7 +56,7 @@ module.exports = function (app) {
 
     app.use(proxy('/component-api', {
         pathRewrite: { '^/component-api': '/' },
-        target: 'http://34.120.69.157',
+        target: 'http://34.98.77.144',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
@@ -68,7 +68,7 @@ module.exports = function (app) {
     app.use(proxy('/metadata-api', {
         pathRewrite: { '^/metadata-api': '/' },
         changeOrigin: true,
-        target: 'http://34.120.69.157',
+        target: 'http://34.98.77.144',
         onProxyReq(proxyReq) {
             // add custom header to request
             proxyReq.setHeader('Origin', ORIGIN);
@@ -79,7 +79,7 @@ module.exports = function (app) {
 
     app.use(proxy('/secrets-api', {
         pathRewrite: { '^/secrets-api': '/' },
-        target: 'http://34.120.69.157',
+        target: 'http://34.98.77.144',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
@@ -91,7 +91,7 @@ module.exports = function (app) {
 
     app.use(proxy('/webhooks', {
         pathRewrite: { '^/webhooks': '/' },
-        target: 'http://34.120.69.157',
+        target: 'http://34.98.77.144',
         changeOrigin: true,
         onProxyReq(proxyReq) {
             // add custom header to request
